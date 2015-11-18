@@ -58,12 +58,12 @@ def media_root(filename):
     """
     Return the full path to ``filename``. ``filename`` is a relative path name in MEDIA_ROOT
     """
-    return os.path.join(django_settings.MEDIA_ROOT, filename)
+    return os.path.join(django_settings.STATIC_ROOT, filename)
 
 def media_url(url, prefix=None):
     if prefix:
         return prefix + urlquote(url)
-    return django_settings.MEDIA_URL + urlquote(url)
+    return django_settings.STATIC_URL + urlquote(url)
 
 def concat(filenames, separator=''):
     """
